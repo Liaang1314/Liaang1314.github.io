@@ -1,98 +1,95 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Đại Chiến Poke Z</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pokemon Website</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo-container">
-      <img src="images/icon_logo.jpg" alt="Đại Chiến Poke Z Logo" class="logo" />
+    <header class="site-header">
+        <img src="images/icon_logo.jpg" alt="Pokemon Logo" class="logo" />
+        <button class="menu-toggle" aria-label="Toggle menu">
+            &#9776;
+        </button>
+        <nav class="nav-menu">
+            <a href="#features">Features</a>
+            <a href="#cards">Cards</a>
+            <a href="#trainers">Trainers</a>
+            <a href="#news">News</a>
+            <a href="#social">Social</a>
+            <a href="#" id="giftcode-menu">Giftcode</a>
+        </nav>
+    </header>
+
+    <div id="giftcode-overlay" class="giftcode-overlay"></div>
+    <div id="giftcode-panel" class="giftcode-panel hidden">
+        <h3>Select Server</h3>
+        <select id="server-select">
+            <option value="" disabled selected>Select a server</option>
+            <option value="server1">Server 1</option>
+            <option value="server2">Server 2</option>
+            <option value="server3">Server 3</option>
+        </select>
+        <div id="server-code" class="server-code"></div>
+        <button id="close-giftcode" class="close-giftcode">Close</button>
     </div>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span class="hamburger"></span>
-    </button>
-  <nav class="main-nav">
-      <ul>
-        <li><a href="#home" aria-label="Trang Chủ">Trang Chủ</a></li>
-        <li><a href="#gameplay" aria-label="Lối Chơi">Lối Chơi</a></li>
-        <li><a href="#characters" aria-label="Nhân Vật">Nhân Vật</a></li>
-        <li><a href="#news" aria-label="Tin Tức">Tin Tức</a></li>
-        <li><a href="#contact" aria-label="Liên Hệ">Liên Hệ</a></li>
-      </ul>
-    </nav>
 
-  <section id="home" class="hero-section">
-    <div class="hero-content">
-      <h1>Chào mừng đến với Thần Thú Đại Chiến</h1>
-      <p>Trải nghiệm thế giới thần thú đầy hấp dẫn và kịch tính.</p>
-      <a href="#gameplay" class="btn-primary">Tìm hiểu ngay</a>
-    </div>
-    <div class="hero-image">
-      <img src="images/bg_character_1.webp" alt="Thần Thú" />
-    </div>
-  </section>
+    <section class="hero">
+        <picture>
+            <source media="(max-width: 600px)" srcset="images/landing_02.webp" />
+            <img src="images/landing_03.webp" alt="Pokemon Hero" />
+        </picture>
+        <h1>Welcome to the Pokemon World</h1>
+        <p>Explore the amazing world of Pokemon with cards, trainers, and more!</p>
+    </section>
 
-  <section id="gameplay" class="gameplay-section">
-    <h2>Lối Chơi</h2>
-    <p>Tham gia vào các trận chiến thần thú, thu thập và huấn luyện các chiến binh mạnh mẽ.</p>
-    <div class="gameplay-cards">
-      <div class="card">
-        <img src="images/feature_01.webp" alt="Khám Phá" />
-        <h3>Khám Phá</h3>
-        <p>Khám phá các vùng đất mới và bí ẩn.</p>
-      </div>
-      <div class="card">
-        <img src="images/feature_02.webp" alt="Thu Thập" />
-        <h3>Thu Thập</h3>
-        <p>Thu thập các thần thú đa dạng và mạnh mẽ.</p>
-      </div>
-      <div class="card">
-        <img src="images/feature_03.webp" alt="Chiến Đấu" />
-        <h3>Chiến Đấu</h3>
-        <p>Tham gia các trận chiến kịch tính và hấp dẫn.</p>
-      </div>
-    </div>
-  </section>
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <img src="images/feature_01.webp" alt="Feature 1" />
+            <img src="images/feature_02.webp" alt="Feature 2" />
+            <img src="images/feature_03.webp" alt="Feature 3" />
+            <img src="images/feature_04.webp" alt="Feature 4" />
+            <img src="images/feature_05.webp" alt="Feature 5" />
+        </div>
+    </section>
 
-  <section id="characters" class="characters-section">
-    <h2>Nhân Vật</h2>
-    <div class="characters-gallery">
-      <img src="images/bg_character_2.png" alt="Nhân Vật 1" />
-      <img src="images/bg_character_3.webp" alt="Nhân Vật 2" />
-    </div>
-  </section>
+    <section id="cards" class="cards">
+        <h2>Pokemon Cards</h2>
+        <div class="card-list">
+            <img src="images/pokemon_card.webp" alt="Pokemon Card" />
+            <img src="images/trainer_card.webp" alt="Trainer Card" />
+            <img src="images/btn-card.png" alt="Card Button" />
+            <img src="images/btn-gc.png" alt="GC Button" />
+        </div>
+    </section>
 
-  <section id="new-images" class="new-images-section">
-    <h2>Ảnh Mới</h2>
-    <div class="new-images-gallery">
-      <img src="images/feature_04.webp" alt="Ảnh Mới 1" />
-      <img src="images/feature_05.webp" alt="Ảnh Mới 2" />
-    </div>
-  </section>
+    <section id="trainers" class="trainers">
+        <h2>Top Trainers</h2>
+        <div class="trainer-backgrounds">
+            <img src="images/bg_character_1.webp" alt="Character Background 1" />
+            <img src="images/bg_character_2.png" alt="Character Background 2" />
+            <img src="images/bg_character_3.webp" alt="Character Background 3" />
+        </div>
+    </section>
 
-  <section id="news" class="news-section">
-    <h2>Tin Tức Mới Nhất</h2>
-    <img src="images/news.png" alt="Tin Tức" />
-    <p>Cập nhật những tin tức mới nhất về Thần Thú Đại Chiến.</p>
-  </section>
+    <section id="news" class="news">
+        <h2>Latest News</h2>
+        <img src="images/news.png" alt="News" />
+    </section>
 
-  <section id="contact" class="contact-section">
-    <h2>Liên Hệ</h2>
-    <p>Theo dõi chúng tôi trên các mạng xã hội để nhận thêm thông tin và sự kiện.</p>
-    <img src="images/social_icon.png" alt="Mạng Xã Hội" />
-  </section>
+    <section id="social" class="social">
+        <h2>Social Media</h2>
+        <img src="images/social_head.webp" alt="Social Header" />
+        <img src="images/social_icon.png" alt="Social Icon" />
+    </section>
 
-  <footer class="site-footer">
-    <p>&copy; 2024 Thần Thú Đại Chiến. Bản quyền thuộc về nhà phát triển.</p>
-  </footer>
+    <footer class="site-footer">
+        <img src="images/top.webp" alt="Back to Top" class="back-to-top" />
+        <p>&copy; 2024 Pokemon Website. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
