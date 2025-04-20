@@ -20,49 +20,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Giftcode menu functionality
+    // Giftcode Modal
     const giftcodeMenu = document.getElementById('giftcode-menu');
+    const giftcodeOverlay = document.getElementById('giftcode-overlay');
     const giftcodePanel = document.getElementById('giftcode-panel');
     const closeGiftcodeBtn = document.getElementById('close-giftcode');
     const serverSelect = document.getElementById('server-select');
     const serverCodeDiv = document.getElementById('server-code');
 
     const serverCodes = {
-        server1: 'GIFT-CODE-SERVER-1',
-        server2: 'GIFT-CODE-SERVER-2',
-        server3: 'GIFT-CODE-SERVER-3'
+        server1: 'Code123',
+        server2: 'Code456',
+        server3: 'Code789',
     };
 
-    if (giftcodeMenu && giftcodePanel && closeGiftcodeBtn && serverSelect && serverCodeDiv) {
-        const giftcodeOverlay = document.getElementById('giftcode-overlay');
+    giftcodeMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        giftcodeOverlay.classList.remove('hidden');
+        giftcodePanel.classList.remove('hidden');
+    });
 
-        giftcodeMenu.addEventListener('click', (e) => {
-            e.preventDefault();
-            giftcodePanel.classList.remove('hidden');
-            giftcodeOverlay.classList.add('active');
-        });
+    closeGiftcodeBtn.addEventListener('click', () => {
+        giftcodeOverlay.classList.add('hidden');
+        giftcodePanel.classList.add('hidden');
+        serverSelect.value = '';
+        serverCodeDiv.textContent = '';
+    });
 
-        closeGiftcodeBtn.addEventListener('click', () => {
-            giftcodePanel.classList.add('hidden');
-            giftcodeOverlay.classList.remove('active');
-            serverSelect.value = '';
-            serverCodeDiv.textContent = '';
-        });
+    giftcodeOverlay.addEventListener('click', () => {
+        giftcodeOverlay.classList.add('hidden');
+        giftcodePanel.classList.add('hidden');
+        serverSelect.value = '';
+        serverCodeDiv.textContent = '';
+    });
 
-        giftcodeOverlay.addEventListener('click', () => {
-            giftcodePanel.classList.add('hidden');
-            giftcodeOverlay.classList.remove('active');
-            serverSelect.value = '';
-            serverCodeDiv.textContent = '';
-        });
+    serverSelect.addEventListener('change', () => {
+        const selectedServer = serverSelect.value;
+        serverCodeDiv.textContent = serverCodes[selectedServer] || '';
+    });
 
-        serverSelect.addEventListener('change', () => {
-            const selectedServer = serverSelect.value;
-            if (serverCodes[selectedServer]) {
-                serverCodeDiv.textContent = serverCodes[selectedServer];
-            } else {
-                serverCodeDiv.textContent = '';
-            }
-        });
-    }
+    // Build Team Modal
+    const teamBuilderMenu = document.querySelector('a[href="#team-builder"]');
+    const buildOverlay = document.getElementById('build-overlay');
+    const buildPanel = document.getElementById('build-panel');
+    const closeBuildTeamBtn = document.getElementById('close-build-team');
+    const pokemonSelect = document.getElementById('pokemon-select');
+    const pokemonCodeDiv = document.getElementById('pokemon-code');
+
+    const pokemonImages = {
+        Rayquaza: 'images/rayquaza.jpg',
+        Kyogre: 'images/kyogre.jpg',
+        Groudon: 'images/groudon.jpg',
+    };
+
+    teamBuilderMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        buildOverlay.classList.remove('hidden');
+        buildPanel.classList.remove('hidden');
+    });
+
+    closeBuildTeamBtn.addEventListener('click', () => {
+        buildOverlay.classList.add('hidden');
+        buildPanel.classList.add('hidden');
+        pokemonSelect.value = '';
+        pokemonCodeDiv.textContent = '';
+    });
+
+    buildOverlay.addEventListener('click', () => {
+        buildOverlay.classList.add('hidden');
+        buildPanel.classList.add('hidden');
+        pokemonSelect.value = '';
+        pokemonCodeDiv.textContent = '';
+    });
+
+    pokemonSelect.addEventListener('change', () => {
+        const selectedPokemon = pokemonSelect.value;
+        const pokemonImage = document.createElement('img'); // Tạo thẻ <img> mới
+        const pokemonCodeDiv = document.getElementById('pokemon-code');
+        pokemonCodeDiv.innerHTML = ''; // Clear
+        if (pokemonImages[selectedPokemon]) {
+            pokemonImage.src = pokemonImages[selectedPokemon];
+            pokemonImage.alt = selectedPokemon;
+            pokemonCodeDiv.appendChild(pokemonImage);
+        }
+    });
 });

@@ -1,324 +1,470 @@
 /* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
 
 a {
-    text-decoration: none;
-    color: #0073e6;
+  text-decoration: none;
+  color: #0073e6;
 }
 
 /* Header styles */
 .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #ffcb05;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffcb05;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
-    height: 50px;
+  height: 50px;
 }
 
 .nav-menu {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    background: none;
-    box-shadow: none;
-    border-radius: 0;
-    width: auto;
-    padding: 0;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-menu a {
-    margin-left: 1.5rem;
-    font-weight: 600;
-    color: #2a75bb;
-    padding: 0 1.5rem;
-    border: none;
+  font-weight: 600;
+  color: #2a75bb;
+  padding: 0.5rem 1rem;
+}
+
+.nav-menu a:hover {
+  color: #ffcb05;
 }
 
 /* Hero section */
 .hero {
-    position: relative;
-    text-align: center;
-    color: white;
-    padding: 3rem 1rem;
-    background-color: #2a75bb;
+  text-align: center;
+  color: white;
+  padding: 3rem 1rem;
+  background-color: #2a75bb;
 }
 
 .hero picture img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    filter: brightness(0.7);
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(0.7);
 }
 
 .hero h1 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    font-weight: 900;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Section styles */
 section {
-    padding: 2rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #2a75bb;
-    font-weight: 800;
-    font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2a75bb;
+  font-weight: 800;
+  font-size: 2rem;
 }
 
 .feature-list,
 .card-list,
 .trainer-backgrounds {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .feature-list img,
 .card-list img,
 .trainer-backgrounds img {
-    max-width: 180px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  max-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .feature-list img:hover,
 .card-list img:hover,
 .trainer-backgrounds img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .news img,
 .social img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Download section styles */
+.download {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.download h2 {
+  font-size: 2rem;
+  color: #2a75bb;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.download p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn-download img {
+  width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.btn-download img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Team Builder styles */
+.team-builder {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.team-builder h2 {
+  font-size: 2rem;
+  color: #2a75bb;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.team-builder select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #2a75bb;
+  margin-bottom: 1rem;
+}
+
+.pokemon-display {
+  margin-top: 1.5rem;
+}
+
+.pokemon-display img {
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Builder Modal Styles */
+.team-builder-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.team-builder-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1099;
+  display: none;
+}
+
+.team-builder-overlay.active {
+  display: block;
+}
+
+.team-builder-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffcb05;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+  display: none;
+}
+
+.team-builder-panel.active {
+  display: block;
+}
+
+.team-builder-panel h3 {
+  margin-bottom: 1rem;
+  color: #2a75bb;
+}
+
+.team-builder-panel select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #2a75bb;
+}
+
+.team-pokemon-display img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.close-team-builder {
+  background: #2a75bb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 /* Footer styles */
 .site-footer {
-    background-color: #2a75bb;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
+  background-color: #2a75bb;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
 .back-to-top {
-    width: 40px;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-to-top img {
+  width: 40px;
+  height: 40px;
 }
 
 /* Giftcode panel styles */
-.giftcode-panel {
-    position: fixed;
-    top: 80px; /* Adjust this value based on your header height */
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffcb05;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    z-index: 1100; /* Higher than the header's z-index */
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    box-sizing: border-box;
+.giftcode-panel,
+.build-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffcb05;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.giftcode-panel.hidden {
-    display: none !important;
+.giftcode-overlay,
+.build-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1099;
 }
 
-.giftcode-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1099;
-    display: none;
+.giftcode-panel h3,
+.build-panel h3 {
+  margin-bottom: 1rem;
+  color: #2a75bb;
 }
 
-.giftcode-overlay.active {
-    display: block;
+.giftcode-panel select,
+.build-panel select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #2a75bb;
 }
 
-.giftcode-panel h3 {
-    margin-bottom: 1rem;
-    color: #2a75bb;
+.server-code,
+.pokemon-code {
+  background: white;
+  color: #2a75bb;
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  min-height: 2rem;
 }
 
-.giftcode-panel select {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    border: 1px solid #2a75bb;
+/* Style for Pokemon image in Build Team modal */
+.pokemon-code img {
+  max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng khung */
+  max-height: 2000px; /* Giới hạn chiều cao tối đa */
+  object-fit: contain; /* Đảm bảo ảnh giữ nguyên tỷ lệ */
+  margin: 0 auto; /* Căn giữa ảnh */
+  display: block; /* Đảm bảo ảnh là một khối */
 }
 
-.server-code {
-    background: white;
-    color: #2a75bb;
-    padding: 0.75rem;
-    border-radius: 5px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    min-height: 2rem;
-}
-
-.close-giftcode {
-    background: #2a75bb;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 700;
+.close-giftcode,
+.close-build-team {
+  background: #2a75bb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .nav-menu a {
-        margin-left: 1rem;
-        font-size: 0.9rem;
-    }
+  .nav-menu a {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+  }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-    .hero p {
-        font-size: 1rem;
-    }
+  .hero p {
+    font-size: 1rem;
+  }
 
-    .feature-list img,
-    .card-list img,
-    .trainer-backgrounds img {
-        max-width: 140px;
-    }
+  .feature-list img,
+  .card-list img,
+  .trainer-backgrounds img {
+    max-width: 140px;
+  }
 }
 
 @media (max-width: 480px) {
-    .site-header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-    }
+  .site-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
 
-    .menu-toggle {
-        font-size: 2rem;
-        background: none;
-        border: none;
-        color: #2a75bb;
-        cursor: pointer;
-        display: block;
-    }
+  .menu-toggle {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #2a75bb;
+    cursor: pointer;
+    display: block;
+  }
 
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffcb05;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 1rem 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 10px 10px;
-        z-index: 1000;
-    }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffcb05;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+    z-index: 1000;
+  }
 
-    .nav-menu.active {
-        display: flex;
-    }
+  .nav-menu.active {
+    display: flex;
+  }
 
-    .nav-menu a {
-        padding: 0.75rem 1rem;
-        color: #2a75bb;
-        font-weight: 700;
-        border-bottom: 1px solid #2a75bb;
-    }
+  .nav-menu a {
+    padding: 0.75rem 1rem;
+    color: #2a75bb;
+    font-weight: 700;
+    border-bottom: 1px solid #2a75bb;
+  }
 
-    .nav-menu a:last-child {
-        border-bottom: none;
-    }
+  .nav-menu a:last-child {
+    border-bottom: none;
+  }
 
-    .hero h1 {
-        font-size: 1.5rem;
-    }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
 
-    .hero p {
-        font-size: 0.9rem;
-    }
+  .hero p {
+    font-size: 0.9rem;
+  }
 
-    .feature-list img,
-    .card-list img,
-    .trainer-backgrounds img {
-        max-width: 100px;
-    }
+  .feature-list img,
+  .card-list img,
+  .trainer-backgrounds img {
+    max-width: 100px;
+  }
 
-    .giftcode-panel {
-        top: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 320px;
-    }
+  .giftcode-panel,
+  .build-panel {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 320px;
+  }
 }
 
 @media (min-width: 481px) {
-    .menu-toggle {
-        display: none;
-    }
+  .menu-toggle {
+    display: none;
+  }
 
-    .nav-menu {
-        display: flex !important;
-    }
+  .nav-menu {
+    display: flex !important;
+  }
+}
+
+.hidden {
+  display: none !important;
 }

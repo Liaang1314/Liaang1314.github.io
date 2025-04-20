@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="site-header">
+    <!-- Header -->
+    <header class="site-header" role="banner">
         <img src="images/icon_logo.jpg" alt="Pokemon Logo" class="logo" />
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             &#9776;
         </button>
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="primary-navigation" role="navigation" aria-label="Primary Navigation">
             <a href="#features">Features</a>
             <a href="#cards">Cards</a>
             <a href="#trainers">Trainers</a>
             <a href="#news">News</a>
             <a href="#social">Social</a>
+            <a href="#team-builder">Build Team</a>
             <a href="#" id="giftcode-menu">Giftcode</a>
         </nav>
     </header>
 
-    <div id="giftcode-overlay" class="giftcode-overlay"></div>
+    <!-- Giftcode Modal -->
+    <div id="giftcode-overlay" class="giftcode-overlay hidden"></div>
     <div id="giftcode-panel" class="giftcode-panel hidden">
         <h3>Select Server</h3>
         <select id="server-select">
@@ -35,6 +38,21 @@
         <button id="close-giftcode" class="close-giftcode">Close</button>
     </div>
 
+    <!-- Build Team Modal -->
+    <div id="build-overlay" class="build-overlay hidden"></div>
+    <div id="build-panel" class="build-panel hidden">
+        <h3>Build Your Pokemon Team</h3>
+        <select id="pokemon-select">
+            <option value="" disabled selected>Select a Pokemon</option>
+            <option value="Rayquaza">Rayquaza</option>
+            <option value="Kyogre">Kyogre</option>
+            <option value="Groudon">Groudon</option>
+        </select>
+        <div id="pokemon-code" class="pokemon-code"></div>
+        <button id="close-build-team" class="close-giftcode">Close</button>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero">
         <picture>
             <source media="(max-width: 600px)" srcset="images/landing_02.webp" />
@@ -44,6 +62,21 @@
         <p>Explore the amazing world of Pokemon with cards, trainers, and more!</p>
     </section>
 
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <h2>Download the Game</h2>
+        <p>Get the game now and start your adventure in the Pokemon world!</p>
+        <div class="download-buttons">
+            <a href="https://play.google.com" class="btn-download" target="_blank">
+                <img src="images/google_play.webp" alt="Google Play" />
+            </a>
+            <a href="https://www.apple.com/app-store/" class="btn-download" target="_blank">
+                <img src="images/app_store.webp" alt="App Store" />
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
     <section id="features" class="features">
         <h2>Features</h2>
         <div class="feature-list">
@@ -55,6 +88,7 @@
         </div>
     </section>
 
+    <!-- Cards Section -->
     <section id="cards" class="cards">
         <h2>Pokemon Cards</h2>
         <div class="card-list">
@@ -65,6 +99,7 @@
         </div>
     </section>
 
+    <!-- Trainers Section -->
     <section id="trainers" class="trainers">
         <h2>Top Trainers</h2>
         <div class="trainer-backgrounds">
@@ -74,20 +109,25 @@
         </div>
     </section>
 
+    <!-- News Section -->
     <section id="news" class="news">
         <h2>Latest News</h2>
         <img src="images/news.png" alt="News" />
     </section>
 
+    <!-- Social Section -->
     <section id="social" class="social">
         <h2>Social Media</h2>
         <img src="images/social_head.webp" alt="Social Header" />
         <img src="images/social_icon.png" alt="Social Icon" />
     </section>
 
+    <!-- Footer -->
     <footer class="site-footer">
-        <img src="images/top.webp" alt="Back to Top" class="back-to-top" />
-        <p>&copy; 2024 Pokemon Website. All rights reserved.</p>
+        <button class="back-to-top" aria-label="Back to Top">
+            <img src="images/top.webp" alt="Back to Top Icon" />
+        </button>
+        <p>&copy; Đại chiến Poke Z. Wind & Hiro.</p>
     </footer>
 
     <script src="script.js"></script>
